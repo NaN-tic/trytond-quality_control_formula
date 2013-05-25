@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The COPYRIGHT file at the top level of this repository             
+contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="quality_template_quantitative_line_formula_form_view">
+            <field name="model">quality.quantitative.template.line</field>
+            <field name="inherit" ref="quality_control.quality_quantitative_template_line_form_view"/>
+            <field name="name">quality_quantitative_template_line_form</field>
+        </record>
+        
+        <record model="ir.ui.view" id="quality_template_quantitative_line_formula_tree_view">
+            <field name="model">quality.quantitative.template.line</field>
+            <field name="inherit" ref="quality_control.quality_quantitative_template_line_tree_view"/>
+            <field name="name">quality_quantitative_template_line_tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="quality_test_quantitative_line_formula_form_view">
+            <field name="model">quality.quantitative.test.line</field>
+            <field name="inherit" ref="quality_control.quality_quantitative_test_line_form_view"/>
+            <field name="name">quality_quantitative_test_line_form</field>
+        </record>
+        
+        <record model="ir.ui.view" id="quality_test_quantitative_line_formula_tree_view">
+            <field name="model">quality.quantitative.test.line</field>
+            <field name="inherit" ref="quality_control.quality_quantitative_test_line_tree_view"/>
+            <field name="name">quality_quantitative_test_line_tree</field>
+        </record>
+        
+        <record model="ir.ui.view" id="quality_template_formula_form_view">
+            <field name="model">quality.template</field>
+            <field name="inherit" ref="quality_control.quality_template_form_view"/>
+            <field name="name">quality_template_form</field>
+        </record>
+        
+        <record model="ir.ui.view" id="quality_test_formula_view_form">
+            <field name="model">quality.test</field>
+            <field name="inherit" ref="quality_control.quality_test_form_view"/>
+            <field name="name">quality_test_form</field>
+        </record>
+    </data>
+</tryton>
+

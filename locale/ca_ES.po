@@ -1,0 +1,65 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:quality.quantitative.template.line:"
+msgid "Formula Name of Line can be used only once on Template."
+msgstr "El nom de la fórmula ha de ser únic per plantilla."
+
+msgctxt "error:quality.quantitative.template.line:"
+msgid "Name of Line can be used only once on Template!"
+msgstr "El nom de la línia ha de ser únic per plantilla"
+
+msgctxt "error:quality.quantitative.template.line:"
+msgid "Name of Line can be used only once on Template."
+msgstr "El nom de la línia ha de ser únic per plantilla"
+
+msgctxt "error:quality.quantitative.test.line:"
+msgid "Formula Name of Line can be used only once on Template."
+msgstr "El nom de la fórmula ha de ser únic per plantilla."
+
+msgctxt "error:quality.quantitative.test.line:"
+msgid "Name of Line can be used only once on Template!"
+msgstr "El nom de la línia ha de ser únic per plantilla"
+
+msgctxt "error:quality.quantitative.test.line:"
+msgid "Name of Line can be used only once on Template."
+msgstr "El nom de la línia ha de ser únic per plantilla"
+
+msgctxt "field:quality.quantitative.template.line,formula_name:"
+msgid "Formula Name"
+msgstr "Nom fórmula"
+
+msgctxt "field:quality.quantitative.test.line,formula_name:"
+msgid "Formula Name"
+msgstr "Nom fórmula"
+
+msgctxt "field:quality.template,formula:"
+msgid "Formula"
+msgstr "Fórmula"
+
+msgctxt "field:quality.test,formula:"
+msgid "Formula"
+msgstr "Fórmula"
+
+msgctxt "field:quality.test,formula_result:"
+msgid "Formula Result"
+msgstr "Resultat de la fórmula"
+
+msgctxt "help:quality.quantitative.template.line,formula_name:"
+msgid ""
+"Name must follow the next rules: \n"
+"\t* Must begin with a letter (a - z, A - B) or underscore (_)\n"
+"\t* Other characters can be letters, numbers or _ \n"
+"\t* It iss Case Sensitive and can be any (reasonable) length \n"
+"\t* There are some reserved words which you cannot use as a variable name because Python uses them for other other things"
+msgstr ""
+"El nom ha de seguir les següent regles:\n"
+"        * Han de començar amb una lletra (a -z, A - B) o per guió baix (_)\n"
+"\t* Els altres caràcters poden ser lletres, números o _\n"
+"\t* Sensible a Majúscules i pot tenir qualsevol (raonable) longitud\n"
+"\t* Hi han varies paraules reservades que no es poden fer servir perque Python les fa servir per altres coses."
+
+msgctxt "help:quality.test,formula_result:"
+msgid ""
+msgstr " "

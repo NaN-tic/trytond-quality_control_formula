@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The COPYRIGHT file at the top level of this repository             
+contains the full copyright notices and license terms. -->
+<data>
+    <xpath
+        expr="/form/group/field[@name=&quot;name&quot;]"
+        position="after">
+        <label name="formula_name"/>
+        <field name="formula_name"/>
+    </xpath>
+</data>
