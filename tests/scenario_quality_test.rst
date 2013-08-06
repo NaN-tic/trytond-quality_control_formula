@@ -139,6 +139,7 @@ Create Template, Template1::
     >>> qt_line2.max_value = Decimal('5.00')
     >>> template.quantitative_lines.append(qt_line2)
     >>> template.formula='(line1+line2)*2'
+    >>> template.unit = unit
     >>> template.save()
     >>> template.reload()
 

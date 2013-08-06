@@ -3,6 +3,7 @@
 
 from trytond.model import fields
 from trytond.pool import PoolMeta
+from trytond.pyson import Bool, Eval
 from trytond.tools import safe_eval
 
 __metaclass__ = PoolMeta
@@ -16,6 +17,16 @@ class Template:
     __name__ = 'quality.template'
 
     formula = fields.Text('Formula')
+    unit = fields.Many2One('product.uom', 'Unit', states={
+            'required': Bool(Eval('formula')),
+            }, depends=['formula'])
+    unit_digits = fields.Function(fields.Integer('Unit Digits',
+            on_change_with=['unit']), 'on_change_with_unit_digits')
+
+    def on_change_with_unit_digits(self, name=None):
+        if not self.unit:
+            return 2
+        return self.unit.digits
 
 
 class QuantitativeTemplateLine:
@@ -23,12 +34,11 @@ class QuantitativeTemplateLine:
 
     formula_name = fields.Char('Formula Name',
         help='Name must follow the next rules: \n'
-             '\t* Must begin with a letter (a - z, A - B) or underscore (_)\n'
-             '\t* Other characters can be letters, numbers or _ \n'
-             '\t* It iss Case Sensitive and can be any (reasonable) length \n'
-             '\t* There are some reserved words which you cannot use as a '
-             'variable name because Python uses them for other other things',
-        )
+        '\t* Must begin with a letter (a - z, A - B) or underscore (_)\n'
+        '\t* Other characters can be letters, numbers or _ \n'
+        '\t* It iss Case Sensitive and can be any (reasonable) length \n'
+        '\t* There are some reserved words which you cannot use as a '
+        'variable name because Python uses them for other other things')
 
     @classmethod
     def __setup__(cls):
@@ -43,8 +53,19 @@ class Test:
     __name__ = 'quality.test'
 
     formula = fields.Text('Formula', readonly=True)
+    unit = fields.Many2One('product.uom', 'Unit', states={
+            'required': Bool(Eval('formula')),
+            }, depends=['formula'])
+    unit_digits = fields.Function(fields.Integer('Unit Digits',
+            on_change_with=['unit']), 'on_change_with_unit_digits')
     formula_result = fields.Function(fields.Float('Formula Result',
-        digits=(16, 2)), 'get_formula_result')
+            digits=(16, Eval('unit_digits', 2)), depends=['unit_digits']),
+        'get_formula_result')
+
+    def on_change_with_unit_digits(self, name=None):
+        if not self.unit:
+            return 2
+        return self.unit.digits
 
     def get_formula_result(self, name=None):
         if not self.formula:
@@ -62,6 +83,7 @@ class Test:
     def set_template_vals(self):
         super(Test, self).set_template_vals()
         self.formula = self.template.formula
+        self.unit = self.template.unit
 
 
 class QuantitativeTestLine:
