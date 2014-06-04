@@ -17,12 +17,15 @@ class Template:
     __name__ = 'quality.template'
 
     formula = fields.Text('Formula')
-    unit = fields.Many2One('product.uom', 'Unit', states={
+    unit = fields.Many2One('product.uom', 'Unit',
+        states={
             'required': Bool(Eval('formula')),
-            }, depends=['formula'])
-    unit_digits = fields.Function(fields.Integer('Unit Digits',
-            on_change_with=['unit']), 'on_change_with_unit_digits')
+            },
+        depends=['formula'])
+    unit_digits = fields.Function(fields.Integer('Unit Digits'),
+        'on_change_with_unit_digits')
 
+    @fields.depends('unit')
     def on_change_with_unit_digits(self, name=None):
         if not self.unit:
             return 2
@@ -53,15 +56,18 @@ class Test:
     __name__ = 'quality.test'
 
     formula = fields.Text('Formula', readonly=True)
-    unit = fields.Many2One('product.uom', 'Unit', states={
+    unit = fields.Many2One('product.uom', 'Unit',
+        states={
             'required': Bool(Eval('formula')),
-            }, depends=['formula'])
-    unit_digits = fields.Function(fields.Integer('Unit Digits',
-            on_change_with=['unit']), 'on_change_with_unit_digits')
+            },
+        depends=['formula'])
+    unit_digits = fields.Function(fields.Integer('Unit Digits'),
+        'on_change_with_unit_digits')
     formula_result = fields.Function(fields.Float('Formula Result',
             digits=(16, Eval('unit_digits', 2)), depends=['unit_digits']),
         'get_formula_result')
 
+    @fields.depends('unit')
     def on_change_with_unit_digits(self, name=None):
         if not self.unit:
             return 2
