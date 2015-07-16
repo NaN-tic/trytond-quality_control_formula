@@ -6,25 +6,9 @@ msgctxt "error:quality.quantitative.template.line:"
 msgid "Formula Name of Line can be used only once on Template."
 msgstr "El nom de la fórmula ha de ser únic per plantilla."
 
-msgctxt "error:quality.quantitative.template.line:"
-msgid "Name of Line can be used only once on Template!"
-msgstr "El nom de la línia ha de ser únic per plantilla"
-
-msgctxt "error:quality.quantitative.template.line:"
-msgid "Name of Line can be used only once on Template."
-msgstr "El nom de la línia ha de ser únic per plantilla"
-
 msgctxt "error:quality.quantitative.test.line:"
 msgid "Formula Name of Line can be used only once on Template."
 msgstr "El nom de la fórmula ha de ser únic per plantilla."
-
-msgctxt "error:quality.quantitative.test.line:"
-msgid "Name of Line can be used only once on Template!"
-msgstr "El nom de la línia ha de ser únic per plantilla"
-
-msgctxt "error:quality.quantitative.test.line:"
-msgid "Name of Line can be used only once on Template."
-msgstr "El nom de la línia ha de ser únic per plantilla"
 
 msgctxt "field:quality.quantitative.template.line,formula_name:"
 msgid "Formula Name"
@@ -38,6 +22,16 @@ msgctxt "field:quality.template,formula:"
 msgid "Formula"
 msgstr "Fórmula"
 
+#, fuzzy
+msgctxt "field:quality.template,unit:"
+msgid "Unit"
+msgstr "Unitat"
+
+#, fuzzy
+msgctxt "field:quality.template,unit_digits:"
+msgid "Unit Digits"
+msgstr "Dígits de la unitat"
+
 msgctxt "field:quality.test,formula:"
 msgid "Formula"
 msgstr "Fórmula"
@@ -45,6 +39,16 @@ msgstr "Fórmula"
 msgctxt "field:quality.test,formula_result:"
 msgid "Formula Result"
 msgstr "Resultat de la fórmula"
+
+#, fuzzy
+msgctxt "field:quality.test,unit:"
+msgid "Unit"
+msgstr "Unitat"
+
+#, fuzzy
+msgctxt "field:quality.test,unit_digits:"
+msgid "Unit Digits"
+msgstr "Dígits de la unitat"
 
 msgctxt "help:quality.quantitative.template.line,formula_name:"
 msgid ""
@@ -59,7 +63,3 @@ msgstr ""
 "\t* Els altres caràcters poden ser lletres, números o _\n"
 "\t* Sensible a Majúscules i pot tenir qualsevol (raonable) longitud\n"
 "\t* Hi han varies paraules reservades que no es poden fer servir perque Python les fa servir per altres coses."
-
-msgctxt "help:quality.test,formula_result:"
-msgid ""
-msgstr " "
