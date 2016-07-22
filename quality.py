@@ -1,7 +1,7 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from simpleeval import simple_eval
-from trytond.model import fields
+from trytond.model import fields, Unique
 from trytond.pool import PoolMeta
 from trytond.pyson import Bool, Eval
 
@@ -45,8 +45,9 @@ class QuantitativeTemplateLine:
     @classmethod
     def __setup__(cls):
         super(QuantitativeTemplateLine, cls).__setup__()
+        t = cls.__table__()
         cls._sql_constraints = [
-            ('template_line_name_uniq', 'UNIQUE(template, formula_name)',
+            ('template_line_name_uniq', Unique(t, t.template, t.formula_name),
                 'Formula Name of Line can be used only once on Template.'),
             ]
 
@@ -99,8 +100,9 @@ class QuantitativeTestLine:
     @classmethod
     def __setup__(cls):
         super(QuantitativeTestLine, cls).__setup__()
+        t = cls.__table__()
         cls._sql_constraints = [
-            ('test_line_name_uniq', 'UNIQUE(test, formula_name)',
+            ('test_line_name_uniq', Unique(t, t.test, t.formula_name),
                 'Formula Name of Line can be used only once on Template.'),
             ]
 
