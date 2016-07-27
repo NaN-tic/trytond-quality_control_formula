@@ -91,6 +91,12 @@ class Test:
         self.formula = self.template.formula
         self.unit = self.template.unit
 
+    def apply_template_values(self):
+        super(Test, self).apply_template_values()
+        for template in self.templates:
+            self.formula = template.formula
+            self.unit = template.unit
+
 
 class QuantitativeTestLine:
     __name__ = 'quality.quantitative.test.line'
