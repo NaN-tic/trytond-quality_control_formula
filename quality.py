@@ -91,11 +91,15 @@ class Test:
         self.formula = self.template.formula
         self.unit = self.template.unit
 
-    def apply_template_values(self):
-        super(Test, self).apply_template_values()
-        for template in self.templates:
-            self.formula = template.formula
-            self.unit = template.unit
+    @classmethod
+    def apply_templates(cls, tests):
+        super(Test, cls).apply_templates(tests)
+        for test in tests:
+            for template in test.templates:
+                test.formula = template.formula
+                test.unit = template.unit
+
+        cls.save(tests)
 
 
 class QuantitativeTestLine:
