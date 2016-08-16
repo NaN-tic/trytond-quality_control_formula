@@ -4,24 +4,14 @@
 import unittest
 import doctest
 import trytond.tests.test_tryton
-from trytond.tests.test_tryton import test_view, test_depends
+from trytond.tests.test_tryton import ModuleTestCase
 from trytond.tests.test_tryton import doctest_setup, doctest_teardown
+from trytond.tests.test_tryton import doctest_checker
 
 
-class QualityControlTestCase(unittest.TestCase):
+class QualityControlTestCase(ModuleTestCase):
     'Test QualityControl module'
-
-    def setUp(self):
-        trytond.tests.test_tryton.install_module(
-            'quality_control_formula')
-
-    def test0005views(self):
-        'Test views'
-        test_view('quality_control_formula')
-
-    def test0006depends(self):
-        'Test depends'
-        test_depends()
+    module = 'quality_control_formula'
 
 
 def suite():
@@ -34,5 +24,6 @@ def suite():
         QualityControlTestCase))
     suite.addTests(doctest.DocFileSuite('scenario_quality_test.rst',
             setUp=doctest_setup, tearDown=doctest_teardown, encoding='utf-8',
+            checker=doctest_checker,
             optionflags=doctest.REPORT_ONLY_FIRST_FAILURE))
     return suite
