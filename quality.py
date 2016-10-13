@@ -75,7 +75,7 @@ class Test:
 
     def get_formula_result(self, name=None):
         if not self.formula:
-            return None
+            return
         vals = {}
         for line in self.quantitative_lines:
             if line.formula_name:
@@ -83,13 +83,16 @@ class Test:
         try:
             value = safe_eval(self.formula, vals)
             return value
-        except NameError:
+        except (NameError, ZeroDivisionError):
             pass
 
-    def set_template_vals(self):
-        super(Test, self).set_template_vals()
-        self.formula = self.template.formula
-        self.unit = self.template.unit
+    def apply_template_values(self):
+        super(Test, self).apply_template_values()
+        for template in self.templates:
+            if template.formula:
+                self.formula = template.formula
+                self.unit = template.unit
+                break
 
 
 class QuantitativeTestLine:
