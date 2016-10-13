@@ -35,10 +35,10 @@ class QuantitativeTemplateLine:
     __name__ = 'quality.quantitative.template.line'
 
     formula_name = fields.Char('Formula Name',
-        help='Name must follow the next rules: \n'
+        help='Name must follow the following rules: \n'
         '\t* Must begin with a letter (a - z, A - B) or underscore (_)\n'
         '\t* Other characters can be letters, numbers or _ \n'
-        '\t* It iss Case Sensitive and can be any (reasonable) length \n'
+        '\t* It is Case Sensitive and can be any (reasonable) length \n'
         '\t* There are some reserved words which you cannot use as a '
         'variable name because Python uses them for other other things')
 
