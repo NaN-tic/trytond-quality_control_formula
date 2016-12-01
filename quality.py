@@ -81,7 +81,10 @@ class Test:
             if line.formula_name:
                 vals[line.formula_name] = line.value or 0
         try:
-            value = simple_eval(self.formula, names=vals)
+            value = simple_eval(self.formula, names=vals, functions={
+                    'round': round,
+                    'int': int,
+                    })
             return value
         except (NameError, ZeroDivisionError):
             pass
