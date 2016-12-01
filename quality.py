@@ -4,7 +4,7 @@
 from trytond.model import fields
 from trytond.pool import PoolMeta
 from trytond.pyson import Bool, Eval
-from trytond.tools import safe_eval
+from simpleeval import simple_eval
 
 __metaclass__ = PoolMeta
 
@@ -81,7 +81,10 @@ class Test:
             if line.formula_name:
                 vals[line.formula_name] = line.value or 0
         try:
-            value = safe_eval(self.formula, vals)
+            value = simple_eval(self.formula, names=vals, functions={
+                    'round': round,
+                    'int': int,
+                    })
             return value
         except (NameError, ZeroDivisionError):
             pass
