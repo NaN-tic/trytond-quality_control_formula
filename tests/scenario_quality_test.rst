@@ -156,7 +156,7 @@ Check Success on Test Line::
     >>> test.save()
     >>> test.reload()
     >>> test.formula
-    u'(line1+line2)*2'
+    '(line1+line2)*2'
     >>> test.formula_result
     10.0
 
@@ -164,8 +164,8 @@ Confirm Test::
 
     >>> test.save()
     >>> test.state
-    u'draft'
+    'draft'
     >>> Test.confirmed([test.id], config.context)
     >>> test.reload()
     >>> test.state
-    u'confirmed'
+    'confirmed'

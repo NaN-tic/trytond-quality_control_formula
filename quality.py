@@ -11,9 +11,8 @@ __all__ = ['Template', 'QuantitativeTemplateLine', 'Test',
     'QuantitativeTestLine']
 
 
-class Template:
+class Template(metaclass=PoolMeta):
     __name__ = 'quality.template'
-    __metaclass__ = PoolMeta
 
     formula = fields.Text('Formula')
     unit = fields.Many2One('product.uom', 'Unit',
@@ -31,9 +30,8 @@ class Template:
         return self.unit.digits
 
 
-class QuantitativeTemplateLine:
+class QuantitativeTemplateLine(metaclass=PoolMeta):
     __name__ = 'quality.quantitative.template.line'
-    __metaclass__ = PoolMeta
 
     formula_name = fields.Char('Formula Name',
         help='Name must follow the following rules: \n'
@@ -53,7 +51,7 @@ class QuantitativeTemplateLine:
             ]
 
 
-class Test:
+class Test(metaclass=PoolMeta):
     __name__ = 'quality.test'
     __metaclass__ = PoolMeta
 
@@ -110,9 +108,8 @@ class Test:
         cls.save(tests)
 
 
-class QuantitativeTestLine:
+class QuantitativeTestLine(metaclass=PoolMeta):
     __name__ = 'quality.quantitative.test.line'
-    __metaclass__ = PoolMeta
 
     formula_name = fields.Char('Formula Name')
 
