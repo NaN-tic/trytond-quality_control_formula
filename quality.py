@@ -5,7 +5,6 @@ from trytond.model import fields, Unique
 from trytond.pool import PoolMeta
 from trytond.pyson import Bool, Eval
 
-__metaclass__ = PoolMeta
 
 
 __all__ = ['Template', 'QuantitativeTemplateLine', 'Test',
@@ -14,6 +13,7 @@ __all__ = ['Template', 'QuantitativeTemplateLine', 'Test',
 
 class Template:
     __name__ = 'quality.template'
+    __metaclass__ = PoolMeta
 
     formula = fields.Text('Formula')
     unit = fields.Many2One('product.uom', 'Unit',
@@ -33,6 +33,7 @@ class Template:
 
 class QuantitativeTemplateLine:
     __name__ = 'quality.quantitative.template.line'
+    __metaclass__ = PoolMeta
 
     formula_name = fields.Char('Formula Name',
         help='Name must follow the following rules: \n'
@@ -54,6 +55,7 @@ class QuantitativeTemplateLine:
 
 class Test:
     __name__ = 'quality.test'
+    __metaclass__ = PoolMeta
 
     formula = fields.Text('Formula', readonly=True)
     unit = fields.Many2One('product.uom', 'Unit',
@@ -110,6 +112,7 @@ class Test:
 
 class QuantitativeTestLine:
     __name__ = 'quality.quantitative.test.line'
+    __metaclass__ = PoolMeta
 
     formula_name = fields.Char('Formula Name')
 

@@ -8,23 +8,16 @@ Imports::
     >>> from dateutil.relativedelta import relativedelta
     >>> from decimal import Decimal
     >>> from operator import attrgetter
+    >>> from trytond.tests.tools import activate_modules
     >>> from proteus import config, Model, Wizard
     >>> from trytond.modules.company.tests.tools import create_company, \
     ...     get_company
     >>> today = datetime.date.today()
 
-Create database::
-
-    >>> config = config.set_trytond()
-    >>> config.pool.test = True
-
 Install quality_test module::
 
-    >>> Module = Model.get('ir.module')
-    >>> quality_test_module, = Module.find(
-    ...     [('name', '=', 'quality_control_formula')])
-    >>> Module.install([quality_test_module.id], config.context)
-    >>> Wizard('ir.module.install_upgrade').execute('upgrade')
+    >>> config = activate_modules('quality_control_formula')
+
 
 Create company::
 
@@ -130,7 +123,7 @@ Create And assing template to Test::
     >>> test=Test()
     >>> test.name = 'TEST/'
     >>> test.document = product
-    >>> test.templates.append(template) 
+    >>> test.templates.append(template)
     >>> test.save()
     >>> Test.apply_templates([test.id], config.context)
 
