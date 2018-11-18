@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -22,12 +22,10 @@ msgctxt "field:quality.template,formula:"
 msgid "Formula"
 msgstr "Fórmula"
 
-#, fuzzy
 msgctxt "field:quality.template,unit:"
 msgid "Unit"
 msgstr "Unitat"
 
-#, fuzzy
 msgctxt "field:quality.template,unit_digits:"
 msgid "Unit Digits"
 msgstr "Dígits de la unitat"
@@ -40,12 +38,10 @@ msgctxt "field:quality.test,formula_result:"
 msgid "Formula Result"
 msgstr "Resultat de la fórmula"
 
-#, fuzzy
 msgctxt "field:quality.test,unit:"
 msgid "Unit"
 msgstr "Unitat"
 
-#, fuzzy
 msgctxt "field:quality.test,unit_digits:"
 msgid "Unit Digits"
 msgstr "Dígits de la unitat"
