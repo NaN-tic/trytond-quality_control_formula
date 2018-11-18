@@ -6,7 +6,6 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Bool, Eval
 
 
-
 __all__ = ['Template', 'QuantitativeTemplateLine', 'Test',
     'QuantitativeTestLine']
 
@@ -34,6 +33,7 @@ class QuantitativeTemplateLine(metaclass=PoolMeta):
     __name__ = 'quality.quantitative.template.line'
 
     formula_name = fields.Char('Formula Name',
+        required=True,
         help='Name must follow the following rules: \n'
         '\t* Must begin with a letter (a - z, A - B) or underscore (_)\n'
         '\t* Other characters can be letters, numbers or _ \n'
