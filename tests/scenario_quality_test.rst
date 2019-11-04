@@ -52,7 +52,6 @@ Create Quality Configuration::
     >>> sequence = Sequence.find([('code','=','quality.test')])[0]
     >>> Configuration = Model.get('quality.configuration')
     >>> configuration = Configuration()
-    >>> configuration.name = 'Configuration'
     >>> Product = Model.get('product.product')
     >>> ConfigLine = Model.get('quality.configuration.line')
     >>> config_line = ConfigLine()
@@ -92,7 +91,6 @@ Create Template, Template1::
     >>> qt_line.proof = qtproof
     >>> qt_line.method = method2
     >>> qt_line.unit = unit
-    >>> qt_line.unit_range = unit
     >>> qt_line.internal_description = 'quality line intenal description'
     >>> qt_line.external_description = 'quality line external description'
     >>> qt_line.min_value = Decimal('1.00')
@@ -106,7 +104,6 @@ Create Template, Template1::
     >>> qt_line2.proof = qtproof
     >>> qt_line2.method = method2
     >>> qt_line2.unit = unit
-    >>> qt_line2.unit_range = unit
     >>> qt_line2.internal_description = 'quality line intenal description'
     >>> qt_line2.external_description = 'quality line external description'
     >>> qt_line2.min_value = Decimal('3.00')
@@ -121,7 +118,6 @@ Create And assing template to Test::
 
     >>> Test = Model.get('quality.test')
     >>> test=Test()
-    >>> test.name = 'TEST/'
     >>> test.document = product
     >>> test.templates.append(template)
     >>> test.save()
