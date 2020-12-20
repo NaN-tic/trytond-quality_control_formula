@@ -80,7 +80,6 @@ Create Template, Template1::
     >>> Template = Model.get('quality.template')
     >>> template=Template()
     >>> template.name = 'Template 1'
-    >>> template.document = product
     >>> template.internal_description='Internal description'
     >>> template.external_description='External description'
     >>> QtTemplateLine = Model.get('quality.quantitative.template.line')
