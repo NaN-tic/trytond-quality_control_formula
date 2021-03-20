@@ -6,10 +6,6 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Bool, Eval
 
 
-__all__ = ['Template', 'QuantitativeTemplateLine', 'Test',
-    'QuantitativeTestLine']
-
-
 class Template(metaclass=PoolMeta):
     __name__ = 'quality.template'
 

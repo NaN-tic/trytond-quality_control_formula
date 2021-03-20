@@ -2,13 +2,13 @@
 # copyright notices and license terms.
 
 from trytond.pool import Pool
-from .quality import *
+from . import quality
 
 
 def register():
     Pool.register(
-        Template,
-        QuantitativeTemplateLine,
-        Test,
-        QuantitativeTestLine,
+        quality.Template,
+        quality.QuantitativeTemplateLine,
+        quality.Test,
+        quality.QuantitativeTestLine,
         module='quality_control_formula', type_='model')
