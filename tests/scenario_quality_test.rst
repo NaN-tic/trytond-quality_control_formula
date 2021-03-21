@@ -49,7 +49,7 @@ Create product::
 Create Quality Configuration::
 
     >>> Sequence = Model.get('ir.sequence')
-    >>> sequence = Sequence.find([('code','=','quality.test')])[0]
+    >>> sequence = Sequence.find([('sequence_type.name', '=', 'Quality Control')])[0]
     >>> Configuration = Model.get('quality.configuration')
     >>> configuration = Configuration()
     >>> Product = Model.get('product.product')
