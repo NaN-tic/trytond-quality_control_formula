@@ -60,7 +60,7 @@ class Test(metaclass=PoolMeta):
     unit_digits = fields.Function(fields.Integer('Unit Digits'),
         'on_change_with_unit_digits')
     formula_result = fields.Function(fields.Float('Formula Result',
-            digits=(16, Eval('unit_digits', 2)), depends=['unit_digits']),
+            digits=(16, Eval('unit_digits', 2))),
         'get_formula_result')
 
     @fields.depends('unit')
