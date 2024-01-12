@@ -13,8 +13,7 @@ class Template(metaclass=PoolMeta):
     unit = fields.Many2One('product.uom', 'Unit',
         states={
             'required': Bool(Eval('formula')),
-            },
-        depends=['formula'])
+            })
     unit_digits = fields.Function(fields.Integer('Unit Digits'),
         'on_change_with_unit_digits')
 
@@ -55,8 +54,7 @@ class Test(metaclass=PoolMeta):
     unit = fields.Many2One('product.uom', 'Unit',
         states={
             'required': Bool(Eval('formula')),
-            },
-        depends=['formula'])
+            })
     unit_digits = fields.Function(fields.Integer('Unit Digits'),
         'on_change_with_unit_digits')
     formula_result = fields.Function(fields.Float('Formula Result',
