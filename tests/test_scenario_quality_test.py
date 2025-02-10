@@ -57,7 +57,7 @@ class Test(unittest.TestCase):
         configuration.allowed_documents.append(config_line)
         config_line.quality_sequence = sequence
         models = Model.get('ir.model')
-        allowed_doc, = models.find([('model', '=', 'product.product')])
+        allowed_doc, = models.find([('name', '=', 'product.product')])
         config_line.document = allowed_doc
         configuration.save()
 
