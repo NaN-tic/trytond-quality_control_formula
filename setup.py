@@ -105,7 +105,3 @@ setup(name=name,
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
     tests_require=tests_require,
-    use_2to3=True,
-    convert_2to3_doctests=[
-        'tests/scenario_quality_test.rst'],
-    )
