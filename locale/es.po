@@ -2,14 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:quality.quantitative.template.line:"
-msgid "Formula Name of Line can be used only once on Template."
-msgstr "El nombre de la fórmula tiene que ser único  por plantilla."
-
-msgctxt "error:quality.quantitative.test.line:"
-msgid "Formula Name of Line can be used only once on Template."
-msgstr "El nombre de la fórmula tiene que ser único  por plantilla."
-
 msgctxt "field:quality.quantitative.template.line,formula_name:"
 msgid "Formula Name"
 msgstr "Nombre para fórmula"
