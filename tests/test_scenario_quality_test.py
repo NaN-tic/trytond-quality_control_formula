@@ -49,17 +49,17 @@ class Test(unittest.TestCase):
         Sequence = Model.get('ir.sequence')
         sequence = Sequence.find([('sequence_type.name', '=', 'Quality Control')
                                   ])[0]
-        Configuration = Model.get('quality.configuration')
-        configuration = Configuration()
-        Product = Model.get('product.product')
-        ConfigLine = Model.get('quality.configuration.line')
-        config_line = ConfigLine()
-        configuration.allowed_documents.append(config_line)
-        config_line.quality_sequence = sequence
-        models = Model.get('ir.model')
-        allowed_doc, = models.find([('name', '=', 'product.product')])
-        config_line.document = allowed_doc
-        configuration.save()
+        with config.set_context(_check_access=False):
+            Configuration = Model.get('quality.configuration')
+            configuration = Configuration()
+            ConfigLine = Model.get('quality.configuration.line')
+            config_line = ConfigLine()
+            configuration.allowed_documents.append(config_line)
+            config_line.quality_sequence = sequence
+            models = Model.get('ir.model')
+            allowed_doc, = models.find([('name', '=', 'product.product')])
+            config_line.document = allowed_doc
+            configuration.save()
 
         # Create Quantitative Proof
         Proof = Model.get('quality.proof')
